@@ -9,11 +9,11 @@
     --light-blue: #DEEBFF;
     --grey: #D9D9D9;
     --light-grey: #F2F2F2;
-    --black: rgb(0,0,0);
+    --black: rgb(0, 0, 0);
     --white: #FFFFFF;
 }
 
-.main-container {
+body {
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
@@ -54,7 +54,7 @@ header nav {
     color: var(--blue);
 }
 
-/* Search section */
+/* Menu section */
 .menu {
     margin: 30px 50px;
 }
@@ -84,17 +84,13 @@ header nav {
 form {
     width: 100%;
     max-width: 377px;
-}
-
-.locate {
     display: flex;
-    align-items: center;
 }
 
-.locate .fa-location-dot {
+form .fa-location-dot {
     width: 50px;
     height: 49px;
-    flex: 0 0 50px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,7 +99,7 @@ form {
     background-color: var(--light-grey);
 }
 
-.locate input {
+form input {
     width: 100%;
     height: 49px;
     min-width: 0;
@@ -116,7 +112,7 @@ form {
     font-weight: 700;
 }
 
-.locate button {
+form button {
     height: 49px;
     padding: 15px 16px;
     display: flex;
@@ -132,16 +128,15 @@ form {
     font-weight: 700;
 }
 
-.locate button .fa-magnifying-glass {
+form button .fa-magnifying-glass {
     display: none;
 }
 
 fieldset {
     border: none;
-    padding: 0;
     display: flex;
-    gap: 15px;
     align-items: center;
+    gap: 15px;
 }
 
 legend {
@@ -171,7 +166,7 @@ input[type="checkbox"] {
     font-size: 22px;
 }
 
-.filter-option:has(input:hover,:checked) {
+.filter-option:has(input:hover, :checked) {
     background-color: var(--light-blue);
 }
 
@@ -195,17 +190,18 @@ input[type="checkbox"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 10px;
+    flex-shrink: 0;
 }
 
-.info {
+.info p {
     font-size: 16px;
     font-weight: 400;
 }
 
 /* Hebergements */
 .hebergements {
-    margin: 30px 50px 0;
+    margin: 30px 50px;
     display: flex;
     gap: 40px;
 }
@@ -230,13 +226,11 @@ input[type="checkbox"] {
     gap: 30px;
 }
 
-
-
 .hebergements-cards img {
     width: 100%;
     aspect-ratio: 2/1;
     object-fit: cover;
-    border: solid white 5px;
+    border: solid var(--white) 5px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
@@ -253,18 +247,25 @@ input[type="checkbox"] {
     line-height: 16px;
 }
 
-.euro {
+span.euro {
     font-weight: 600;
 }
+
+.hebergement-card .card-content .rating {
+    font-size: 16px;
+    color: var(--blue);
+    line-height: 13.25px;
+}
+
 .card-content .rating .neutral-star {
     color: var(--light-grey);
 }
+
 .hebergement-card {
     border-radius: 20px;
     padding-bottom: 15px;
     background-color: white;
     box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
-    transition: 1.1;
 }
 
 .hebergement-card:hover {
@@ -276,14 +277,6 @@ input[type="checkbox"] {
     flex-direction: column;
     gap: 8px;
     padding: 0 15px;
-}
-
-.hebergement-card .card-content .rating {
-    font-size: 16px;
-    color: var(--blue);
-    line-height: 13.25px;
-    height: 13.25px;
-    /* A revoir */
 }
 
 .sublink a {
@@ -300,82 +293,94 @@ input[type="checkbox"] {
     flex-direction: column;
     gap: 30px;
 }
+
 .popular-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .popular-title h2 {
     font-size: 22px;
 }
+
 .popular-title i {
     color: var(--blue);
     font-size: 18px;
 }
+
 .popular-cards {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     gap: 30px;
 }
+
 .popular-card {
     display: flex;
     align-items: center;
     box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    transition: 1.1;
 }
+
 .popular-card:hover {
     transform: scale(1.01);
 }
+
 .popular-card img {
     width: 123px;
     height: 146px;
     object-fit: cover;
     border-right: none;
-    border: solid 5px white;
+    border: solid 5px var(--white);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
+
 .popular-card .card-content {
     width: 246px;
-    height: 146px;                                     /*A revoir*/
+    height: 146px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding: 10px 5px 10px 15px;                    /* Comme j'ai augmenté la hauteur de height de 10px j'ai augmenter le padding bot de 5px */
-    background-color: white;
+    padding: 10px 5px 10px 15px;
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.card-text {
+.card-content .card-text {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-.card-text h3 {
+
+.card-content .card-text h3 {
     font-size: 16px;
     font-weight: 700;
 }
-.card-text p {
+
+.card-content .card-text p {
     font-size: 14px;
 }
+
 .popular-card .card-content .rating {
     width: 68px;
     display: flex;
 }
+
 .popular-card .card-content .rating i {
     font-size: 12px;
     color: var(--blue);
 }
+
 .popular-card .card-content .rating .neutral-star {
     color: var(--light-grey);
 }
 
 /* Activities */
 .activities {
-    margin: 30px 50px;
+    margin: 50px;
     padding: 0 30px;
 }
 
@@ -403,16 +408,16 @@ input[type="checkbox"] {
     flex-direction: column;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 3px 15px 0px #0000001A;
-    transition: 1.1;
+    box-shadow: 0 3px 15px 0px rgba(0, 0, 0, 0.1);
 }
+
 .activity-card:hover {
     transform: scale(1.01);
 }
 
 .activity-img {
-    height: 100%;
-    min-height: 0;
+    flex: 1;
+    overflow: hidden;
 }
 
 .activity-img img {
@@ -425,7 +430,7 @@ input[type="checkbox"] {
 .activity-content h3 {
     font-size: 16px;
     font-weight: 700;
-    color: black;
+    color: var(--black);
     padding: 20px 19px;
 }
 
@@ -438,6 +443,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: var(--light-grey);
+
 }
 
 .footer-content nav {
@@ -462,51 +468,45 @@ footer {
 /* Responsive */
 
 @media (max-width: 1024px) and (min-width: 768px) {
+
     fieldset {
         display: flex;
         flex-wrap: wrap;
     }
+
     legend {
         width: 100%;
         margin-bottom: 10px;
     }
+
     .hebergements {
         display: grid;
         grid-template-columns: 1fr;
     }
+
     .hebergements-list-right {
         width: 100%;
         display: flex;
         gap: 20px;
     }
+
     .popular-cards {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         column-gap: 20px;
     }
 
-    .popular-card {
-        width: 100%;
-    }
-
     .popular-card img {
-        width: 91.56px;
-        min-width: 91.56px;
+        min-width: 92px;
         height: 146px;
     }
 
     .popular-card .card-content {
         width: 100%;
-        min-width: 0;
         height: 146px;
     }
 
     .activity-card {
-        width: 100%;
-        height: auto;
-    }
-
-    .activity-img {
         height: auto;
     }
 
@@ -514,10 +514,6 @@ footer {
         height: 70px;
         display: flex;
         align-items: center;
-    }
-
-    .activity-content h3 {
-        margin: 0;
     }
 
     .activity-img img {
@@ -536,7 +532,6 @@ footer {
     }
 
     .img-header {
-        /* A revoir l'espace entre le logo et les liens   */
         padding: 0 30px;
     }
 
@@ -548,7 +543,6 @@ footer {
     }
 
     .header-link a {
-        text-align: center;
         display: flex;
         justify-content: center;
         border-bottom: solid var(--light-grey) 2px;
@@ -556,7 +550,7 @@ footer {
     }
 
     .header-link a:hover {
-        border-color: var(--blue);
+        border-bottom-color: var(--blue);
         border-top: none;
     }
 
@@ -568,40 +562,39 @@ footer {
         padding: 0 20px 30px;
     }
 
-    .locate {
+    form {
         display: flex;
         position: relative;
         border-radius: 15px;
     }
 
-    .locate input {
+    form input {
         margin-right: 30px;
+        padding-left: 20px
     }
 
-    .locate button {
+    form button {
         position: absolute;
         z-index: 2;
         right: 0;
-        top: 0;
         border-radius: 15px;
         padding: 15px 16px;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
-    .locate button span {
+    form button span {
         display: none;
     }
 
-    .locate button .fa-magnifying-glass {
+    form button .fa-magnifying-glass {
         display: inline;
-        padding: 0;
         font-size: 17px;
     }
 
     fieldset {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 18px 10px;
     }
 
     legend {
@@ -610,7 +603,6 @@ footer {
     }
 
     .filter-option span {
-        /* A revoir l'espace l'icone et familial */
         font-size: 14px;
     }
 
@@ -636,32 +628,29 @@ footer {
     }
 
     .popular-cards {
+        width: 100%;
         display: flex;
         gap: 15px;
     }
 
     .popular-card {
         display: flex;
-        width: 100%;
         align-items: center;
     }
 
-    .popular-cards img {
-       object-fit: cover;
-       width: 111.67px;
-       /* A revoir taille fixe */
+    .popular-card .card-content {
+        width: 100%;
     }
 
-    .popular-cards .card-content {
-        width: 100%;
-        height: 146px;
+    .popular-cards img {
+        object-fit: cover;
+        width: 112px;
+        flex-shrink: 0;
     }
 
     .hebergements-list-left {
-        grid-row: 2;
-        background-color: white;
+        background-color: var(--white);
         padding: 20px;
-        display: flex;
         gap: 15px;
     }
 
@@ -669,27 +658,31 @@ footer {
         grid-template-columns: 1fr;
         gap: 15px;
     }
+
     .hebergement-card img {
         height: 124px;
-        /* A revoir taille fixe */
     }
+
+    .card-content .rating {
+        width: 81px;
+        display: flex;
+    }
+
+    .card-content .rating i {
+        font-size: 12px;
+    }
+
     .activities {
         margin: 0;
         padding: 30px;
     }
 
     .activities-cards {
-        display: grid;
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
     .activity-card {
-        width: 100%;
-        height: auto;
-    }
-
-    .activity-img {
         height: auto;
     }
 
@@ -708,7 +701,8 @@ footer {
         margin: 0;
         padding: 30px 0 0 0;
     }
+
     .footer-content {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 }
