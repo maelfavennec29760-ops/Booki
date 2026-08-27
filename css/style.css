@@ -126,6 +126,7 @@ form button {
     font-family: inherit;
     font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 form button .fa-magnifying-glass {
@@ -157,7 +158,6 @@ input[type="checkbox"] {
     align-items: center;
     gap: 10px;
     padding: 4px 19px;
-    font-weight: 700;
     cursor: pointer;
 }
 
@@ -312,7 +312,6 @@ span.euro {
 .popular-cards {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     gap: 30px;
 }
 
@@ -423,8 +422,8 @@ span.euro {
 .activity-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     display: block;
+    object-fit: cover;
 }
 
 .activity-content h3 {
@@ -563,14 +562,12 @@ footer {
     }
 
     form {
-        display: flex;
         position: relative;
-        border-radius: 15px;
     }
 
     form input {
         margin-right: 30px;
-        padding-left: 20px
+        padding-left: 20px;
     }
 
     form button {
@@ -687,10 +684,7 @@ footer {
     }
 
     .activity-img img {
-        width: 100%;
         height: 141px;
-        object-fit: cover;
-        display: block;
     }
 
     .activity-content h3 {
@@ -699,10 +693,10 @@ footer {
 
     footer {
         margin: 0;
-        padding: 30px 0 0 0;
+        padding-top: 30px;
     }
 
     .footer-content {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
     }
 }
